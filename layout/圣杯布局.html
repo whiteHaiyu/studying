@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            overflow: hidden;
+            padding: 0 200px 0 200px;
+        }
+
+        #middle {
+            height: 100vh;
+            background-color: #FFEB2B;
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+
+        #left {
+            height: 100vh;
+            background-color: #03A9F4;
+            width: 200px;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+        }
+
+        #right {
+            height: 100vh;
+            background-color: #4CAF50;
+            width: 200px;
+            float: left;
+            margin-left: -200px;
+            position: relative;
+            right: -200px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!--
+        圣杯布局——左右两列宽度固定，中间部分自适应的三列布局
+        - 1）HTML结构中——先主体内容后侧边栏
+        - 2）两侧宽度固定，中间宽度设置100%
+        - 2）主体内容和左右两侧分别加浮动 float:left;
+        - 4) 将左侧盒子拉到最左边（margin-left: -100%），将右侧盒子拉到右边（margin-left: -右侧盒的宽度）
+        - 5）通过左中右盒子的父盒将中间内容露出来（在父盒上设置padding: 0 右侧盒子宽度 0 左侧盒子宽度）
+        - 6）分别还原左侧盒和右侧盒（为左侧盒和右侧盒设置position:relative; 左侧盒设置left属性，值为-左侧盒宽度；右侧盒设置right:-右侧盒的宽度）
+    -->
+    <div id="content">
+        <div id="middle">middle</div>
+        <div id="left">left</div>
+        <div id="right">right</div>
+    </div>
+</body>
+
+</html>

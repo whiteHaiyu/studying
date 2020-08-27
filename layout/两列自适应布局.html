@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两列自适应布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            height: 100vh;
+            position: relative;
+        }
+
+        #left {
+            position: absolute;
+            left: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: #2196F3;
+        }
+
+        #right {
+            box-sizing: border-box;
+            height: 100vh;
+            padding-left: 300px;
+            background-color: #FFEB3B;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        两列自适应布局——左侧宽度固定，右侧宽度自适应
+        - 1）左右两个盒子，左侧宽度固定，右侧宽度设置100%
+        - 2）左侧盒子设置绝对定位position: absolute;
+        - 3）右侧盒子中添加子盒，并为子盒设置padding-left属性，值为左侧盒子的宽度
+    -->
+    <div id="box">
+        <div id="left">left</div>
+        <div id="right">right</div>
+    </div>
+</body>
+
+</html>
